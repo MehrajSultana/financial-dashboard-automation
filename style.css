@@ -34,9 +34,15 @@ body {
   color: #94a3b8;
 }
 
-#refreshBtn {
-  background: #22c55e;
-  color: white;
+.topbar-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#refreshBtn,
+.secondary-btn,
+.filter-btn {
   border: none;
   padding: 12px 18px;
   border-radius: 8px;
@@ -44,7 +50,19 @@ body {
   font-weight: bold;
 }
 
-#refreshBtn:hover {
+#refreshBtn {
+  background: #22c55e;
+  color: white;
+}
+
+.secondary-btn {
+  background: #334155;
+  color: #f8fafc;
+}
+
+#refreshBtn:hover,
+.secondary-btn:hover,
+.filter-btn:hover {
   opacity: 0.9;
 }
 
@@ -105,6 +123,68 @@ body {
   color: #f8fafc;
 }
 
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  align-items: end;
+  min-height: 240px;
+}
+
+.chart-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-bar-wrap span,
+.chart-bar-wrap small {
+  color: #cbd5e1;
+}
+
+.chart-bar {
+  width: 100%;
+  max-width: 48px;
+  height: 160px;
+  background: #334155;
+  border-radius: 12px;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+}
+
+.fill {
+  width: 100%;
+  background: linear-gradient(to top, #06b6d4, #3b82f6);
+  border-radius: 12px;
+}
+
+.transactions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #334155;
+  color: #e2e8f0;
+  padding: 10px 14px;
+}
+
+.filter-btn.active {
+  background: #06b6d4;
+  color: #0f172a;
+}
+
 .table-wrapper {
   overflow-x: auto;
 }
@@ -144,7 +224,7 @@ th {
   color: #fbbf24;
 }
 
-.inprogress {
+.inreview {
   background: rgba(59, 130, 246, 0.2);
   color: #60a5fa;
 }
@@ -156,5 +236,9 @@ th {
 
   .card p {
     font-size: 22px;
+  }
+
+  .chart-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
