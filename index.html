@@ -13,7 +13,10 @@
         <h1>Financial Dashboard & Automation</h1>
         <p>Enterprise finance metrics, transaction tracking, and reporting overview</p>
       </div>
-      <button id="refreshBtn">Refresh Data</button>
+      <div class="topbar-actions">
+        <button id="refreshBtn">Refresh Data</button>
+        <button id="exportBtn" class="secondary-btn">Export CSV</button>
+      </div>
     </header>
 
     <section class="card-grid">
@@ -61,8 +64,52 @@
 
     <section class="panel">
       <div class="panel-header">
-        <h2>Recent Transactions</h2>
+        <h2>Revenue Trend</h2>
       </div>
+      <div class="chart-grid">
+        <div class="chart-bar-wrap">
+          <span>Jan</span>
+          <div class="chart-bar"><div class="fill" style="height: 55%"></div></div>
+          <small>$42K</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Feb</span>
+          <div class="chart-bar"><div class="fill" style="height: 68%"></div></div>
+          <small>$51K</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Mar</span>
+          <div class="chart-bar"><div class="fill" style="height: 74%"></div></div>
+          <small>$58K</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Apr</span>
+          <div class="chart-bar"><div class="fill" style="height: 63%"></div></div>
+          <small>$49K</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>May</span>
+          <div class="chart-bar"><div class="fill" style="height: 82%"></div></div>
+          <small>$64K</small>
+        </div>
+        <div class="chart-bar-wrap">
+          <span>Jun</span>
+          <div class="chart-bar"><div class="fill" style="height: 91%"></div></div>
+          <small>$71K</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header transactions-header">
+        <h2>Recent Transactions</h2>
+        <div class="filter-group">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="Revenue">Revenue</button>
+          <button class="filter-btn" data-filter="Expense">Expense</button>
+        </div>
+      </div>
+
       <div class="table-wrapper">
         <table>
           <thead>
@@ -74,43 +121,7 @@
               <th>Status</th>
             </tr>
           </thead>
-          <tbody id="transactionBody">
-            <tr>
-              <td>2026-03-01</td>
-              <td>Operations</td>
-              <td>Expense</td>
-              <td>$12,500</td>
-              <td><span class="badge pending">Pending</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-02</td>
-              <td>Sales</td>
-              <td>Revenue</td>
-              <td>$28,900</td>
-              <td><span class="badge completed">Completed</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-03</td>
-              <td>IT</td>
-              <td>Expense</td>
-              <td>$8,200</td>
-              <td><span class="badge completed">Completed</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-04</td>
-              <td>Finance</td>
-              <td>Revenue</td>
-              <td>$17,400</td>
-              <td><span class="badge inprogress">In Review</span></td>
-            </tr>
-            <tr>
-              <td>2026-03-05</td>
-              <td>Marketing</td>
-              <td>Expense</td>
-              <td>$6,750</td>
-              <td><span class="badge completed">Completed</span></td>
-            </tr>
-          </tbody>
+          <tbody id="transactionBody"></tbody>
         </table>
       </div>
     </section>
